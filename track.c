@@ -460,18 +460,30 @@ static void get_color(double *r, double *g, double *b, struct pos *pos)
     83,
     96,
     114,
-    136
+    136,
+	169,
+	191,
+	230,
+	275,
+	345,
+	434
   };
 #undef UNISYS_COLORS
 #ifdef UNISYS_COLORS
-  double colors[7][3] = {
+  double colors[13][3] = {
     {0, 0.7, 0}, /* DEP */
     {1, 1, 0.3}, /* TS */
     {0.7, 0, 0}, /* 1 */
-    {1, 0.3, 0.3}, /* 2 */
+    {1, 1, 0.3}, /* 2 */
     {0.7, 0, 0.7}, /* 3 */
     {1, 0.3, 1}, /* 4 */
-    {1, 1, 1} /* 5 */
+    {1, 1, 1}, /* 5 */
+	{0.627, 0, 0}, /* 6 */
+	{0.8, 0, 0.2}, /* 7 */
+	{0.8, 0, 0.4}, /* 8 */
+	{0.608, 0.188, 1}, /* 9 */
+	{0.976, 0.655, 0.69}, /* 10 */
+	{1, 0.302, 1} /* HYC */
   };
 #else
 #  define COLOR(r, g, b) {((double)(r) / (double)0xFF),	\
@@ -479,26 +491,38 @@ static void get_color(double *r, double *g, double *b, struct pos *pos)
 			  ((double)(b) / (double)0xFF)}
     /* Wikipedia colors */
 #if 0
-  /* Old colors. */
-  double colors[7][3] = {
-    COLOR(0x00, 0xFF, 0xFF), /* DEP */
+  /* Old colors */
+  double colors[13][3] = {
+    COLOR(0x00, 0xFF, 0xFF), /* TD */
     COLOR(0x90, 0xEE, 0x90), /* TS */
-    COLOR(0xFF, 0xFF, 0xFF), /* cat1 */
-    COLOR(0xFF, 0xFF, 0xB0), /* cat2 */
-    COLOR(0xFF, 0xFF, 0x00), /* cat3 */
-    COLOR(0xFF, 0xA5, 0x00), /* cat4 */
-    COLOR(0xFF, 0x20, 0x20) /* cat5 */
+    COLOR(0xFF, 0xFF, 0xFF), /* C1 */
+    COLOR(0xFF, 0xFF, 0xB0), /* C2 */
+    COLOR(0xFF, 0xFF, 0x00), /* C3 */
+    COLOR(0xFF, 0xA5, 0x00), /* C4 */
+    COLOR(0xFF, 0x20, 0x20), /* C5 */
+    COLOR(0xB9, 0x00, 0x00), /* C6 */
+    COLOR(0x66, 0x00, 0x19), /* C7 */
+    COLOR(0x67, 0x00, 0x67), /* C8 */
+    COLOR(0x00, 0xFF, 0xFF), /* C9 */
+    COLOR(0x00, 0xFF, 0xFF), /* C10 */
+    COLOR(0x00, 0xFF, 0xFF) /* HYC */
   };
 #else
   /* New colors. */
-  double colors[7][3] = {
-    COLOR(0x5e, 0xba, 0xff), /* DEP */
+  double colors[13][3] = {
+    COLOR(0x5e, 0xba, 0xff), /* TD */
     COLOR(0x00, 0xfa, 0xf4), /* TS */
-    COLOR(0xff, 0xff, 0xcc), /* cat1 */
-    COLOR(0xff, 0xe7, 0x75), /* cat2 */
-    COLOR(0xff, 0xc1, 0x40), /* cat3 */
-    COLOR(0xff, 0x8f, 0x20), /* cat4 */
-    COLOR(0xff, 0x60, 0x60) /* cat5 */
+    COLOR(0xff, 0xff, 0xcc), /* C1 */
+    COLOR(0xff, 0xe7, 0x75), /* C2 */
+    COLOR(0xff, 0xc1, 0x40), /* C3 */
+    COLOR(0xff, 0x8f, 0x20), /* C4 */
+    COLOR(0xff, 0x60, 0x60), /* C5 */
+    COLOR(0xa0, 0x00, 0x00), /* C6 */
+	COLOR(0xcc, 0x00, 0x33), /* C7 */
+    COLOR(0xcc, 0x00, 0x66), /* C8 */
+	COLOR(0x93, 0xB0, 0xFF), /* C9 */
+    COLOR(0xF9, 0xA7, 0xB0), /* C10 */
+    COLOR(0xFF, 0x4D, 0xFF) /* HYC */
   };
 #endif
 #endif
@@ -523,7 +547,7 @@ static void get_color(double *r, double *g, double *b, struct pos *pos)
     return;
   }
 
-  for (i = 0; winds[i + 1] < pos->wind && i < 6; i++) {
+  for (i = 0; winds[i + 1] < pos->wind && i < 12; i++) {
     /* Skip down until we get to the right category. */
   }
   *r = colors[i][0];
