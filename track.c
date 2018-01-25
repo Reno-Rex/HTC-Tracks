@@ -461,12 +461,12 @@ static void get_color(double *r, double *g, double *b, struct pos *pos)
     96,
     114,
     136,
-	169,
-	191,
-	230,
-	275,
-	345,
-	434
+    169,
+    191,
+    230,
+    275,
+    345,
+    434
   };
 #undef UNISYS_COLORS
 #ifdef UNISYS_COLORS
@@ -518,9 +518,9 @@ static void get_color(double *r, double *g, double *b, struct pos *pos)
     COLOR(0xff, 0x8f, 0x20), /* C4 */
     COLOR(0xff, 0x60, 0x60), /* C5 */
     COLOR(0xa0, 0x00, 0x00), /* C6 */
-	COLOR(0xcc, 0x00, 0x33), /* C7 */
+    COLOR(0xcc, 0x00, 0x33), /* C7 */
     COLOR(0xcc, 0x00, 0x66), /* C8 */
-	COLOR(0x93, 0xB0, 0xFF), /* C9 */
+    COLOR(0x93, 0xB0, 0xFF), /* C9 */
     COLOR(0xF9, 0xA7, 0xB0), /* C10 */
     COLOR(0xFF, 0x4D, 0xFF) /* HYC */
   };
