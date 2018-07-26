@@ -471,19 +471,19 @@ static void get_color(double *r, double *g, double *b, struct pos *pos)
 #undef UNISYS_COLORS
 #ifdef UNISYS_COLORS
   double colors[13][3] = {
-    {0, 0.7, 0},           /* TD */
-    {1, 1, 0.3},           /* TS */
-    {0.7, 0, 0},           /* C1 */
-    {1, 1, 0.3},           /* C2 */
-    {0.7, 0, 0.7},         /* C3 */
-    {1, 0.3, 1},           /* C4 */
-    {1, 1, 1},             /* C5 */
-    {0.627, 0, 0},         /* C6 */
-    {0.8, 0, 0.2},         /* C7 */
-    {0.8, 0, 0.4},         /* C8 */
-    {0.608, 0.188, 1},     /* C9 */
-    {0.976, 0.655, 0.69},  /* C10 */
-    {1, 0.302, 1}          /* HYC */
+    {0, 0.7, 0}, /* DEP */
+    {1, 1, 0.3}, /* TS */
+    {0.7, 0, 0}, /* 1 */
+    {1, 1, 0.3}, /* 2 */
+    {0.7, 0, 0.7}, /* 3 */
+    {1, 0.3, 1}, /* 4 */
+    {1, 1, 1}, /* 5 */
+    {0.627, 0, 0}, /* 6 */
+    {0.8, 0, 0.2}, /* 7 */
+    {0.8, 0, 0.4}, /* 8 */
+    {0.608, 0.188, 1}, /* 9 */
+    {0.976, 0.655, 0.69}, /* 10 */
+    {1, 0.302, 1} /* HYC */
   };
 #else
 #  define COLOR(r, g, b) {((double)(r) / (double)0xFF),	\
@@ -505,7 +505,7 @@ static void get_color(double *r, double *g, double *b, struct pos *pos)
     COLOR(0x67, 0x00, 0x67), /* C8 */
     COLOR(0x00, 0xFF, 0xFF), /* C9 */
     COLOR(0x00, 0xFF, 0xFF), /* C10 */
-    COLOR(0x00, 0xFF, 0xFF)  /* HYC */
+    COLOR(0x00, 0xFF, 0xFF) /* HYC */
   };
 #else
   /* New colors. */
@@ -522,7 +522,7 @@ static void get_color(double *r, double *g, double *b, struct pos *pos)
     COLOR(0xd8, 0x07, 0x43), /* C8 */
     COLOR(0x9b, 0x30, 0xff), /* C9 */
     COLOR(0x76, 0x14, 0xd1), /* C10 */
-    COLOR(0xff, 0x99, 0xff)  /* HYC */
+    COLOR(0xff, 0x99, 0xff) /* HYC */
   };
 #endif
 #endif
