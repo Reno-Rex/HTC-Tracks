@@ -117,7 +117,7 @@ static struct args read_args(int argc, char **argv)
     .dots = 0.3,
     .lines = 0.075,
     .alpha = 1.0,
-    .template = true,
+    .template = false,
     .bg = "../data/bg8192.png",
     .output = "../png/output.png",
   };
@@ -462,28 +462,28 @@ static void get_color(double *r, double *g, double *b, struct pos *pos)
     114,
     136,
     169,
-    191,
-    230,
-    275,
-    345,
+    212,
+    265,
+    312,
+    378,
     434
   };
 #undef UNISYS_COLORS
 #ifdef UNISYS_COLORS
-  double colors[13][3] = {
-    {0, 0.7, 0}, /* DEP */
-    {1, 1, 0.3}, /* TS */
-    {0.7, 0, 0}, /* 1 */
-    {1, 1, 0.3}, /* 2 */
-    {0.7, 0, 0.7}, /* 3 */
-    {1, 0.3, 1}, /* 4 */
-    {1, 1, 1}, /* 5 */
-    {0.627, 0, 0}, /* 6 */
-    {0.8, 0, 0.2}, /* 7 */
-    {0.8, 0, 0.4}, /* 8 */
-    {0.608, 0.188, 1}, /* 9 */
-    {0.976, 0.655, 0.69}, /* 10 */
-    {1, 0.302, 1} /* HYC */
+  double colors[14][3] = {
+    {0, 0.7, 0},          /* TD */
+    {1, 1, 0.3},          /* TS */
+    {0.7, 0, 0},          /* C1 */
+    {1, 1, 0.3},          /* C2 */
+    {0.7, 0, 0.7},        /* C3 */
+    {1, 0.3, 1},          /* C4 */
+    {1, 1, 1},            /* C5 */
+    {0.627, 0, 0},        /* C6 */
+    {0.8, 0, 0.2},        /* C7 */
+    {0.8, 0, 0.4},        /* C8 */
+    {0.608, 0.188, 1},    /* C9 */
+    {0.976, 0.655, 0.69}, /* C10 */
+    {1, 0.302, 1}         /* HYC */
   };
 #else
 #  define COLOR(r, g, b) {((double)(r) / (double)0xFF),	\
@@ -492,7 +492,7 @@ static void get_color(double *r, double *g, double *b, struct pos *pos)
     /* Wikipedia colors */
 #if 0
   /* Old colors */
-  double colors[13][3] = {
+  double colors[14][3] = {
     COLOR(0x00, 0xFF, 0xFF), /* TD */
     COLOR(0x90, 0xEE, 0x90), /* TS */
     COLOR(0xFF, 0xFF, 0xFF), /* C1 */
@@ -504,12 +504,12 @@ static void get_color(double *r, double *g, double *b, struct pos *pos)
     COLOR(0x66, 0x00, 0x19), /* C7 */
     COLOR(0x67, 0x00, 0x67), /* C8 */
     COLOR(0x00, 0xFF, 0xFF), /* C9 */
-    COLOR(0x00, 0xFF, 0xFF), /* C10 */
-    COLOR(0x00, 0xFF, 0xFF) /* HYC */
+    COLOR(0xD3, 0x4E, 0x99), /* C10 */
+    COLOR(0x00, 0xFF, 0xFF)  /* HYC */
   };
 #else
   /* New colors. */
-  double colors[13][3] = {
+  double colors[14][3] = {
     COLOR(0x5e, 0xba, 0xff), /* TD */
     COLOR(0x00, 0xfa, 0xf4), /* TS */
     COLOR(0xff, 0xff, 0xcc), /* C1 */
@@ -517,12 +517,12 @@ static void get_color(double *r, double *g, double *b, struct pos *pos)
     COLOR(0xff, 0xc1, 0x40), /* C3 */
     COLOR(0xff, 0x8f, 0x20), /* C4 */
     COLOR(0xff, 0x60, 0x60), /* C5 */
-    COLOR(0xff, 0x32, 0x32), /* C6 */
-    COLOR(0xea, 0x11, 0x11), /* C7 */
-    COLOR(0xd8, 0x07, 0x43), /* C8 */
-    COLOR(0x9b, 0x30, 0xff), /* C9 */
-    COLOR(0x76, 0x14, 0xd1), /* C10 */
-    COLOR(0xff, 0x99, 0xff) /* HYC */
+    COLOR(0xff, 0x14, 0x14), /* C6 */
+    COLOR(0xa0, 0x0c, 0x0c), /* C7 */
+    COLOR(0x97, 0x24, 0x46), /* C8 */
+    COLOR(0xbd, 0x2a, 0x67), /* C9 */
+    COLOR(0xd3, 0x4e, 0x99), /* C10 */
+    COLOR(0xff, 0x99, 0xff)  /* HYC */
   };
 #endif
 #endif
